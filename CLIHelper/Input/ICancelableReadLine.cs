@@ -1,0 +1,6 @@
+namespace CLIHelper;
+
+public interface ICancelableReadLine
+{
+	public ReadData TryReadLine(ReadConfig config);
+}
