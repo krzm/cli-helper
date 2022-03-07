@@ -2,15 +2,15 @@ namespace CLIHelper;
 
 public class ReadConfig
 {
-	public int Max { get; init; }
+	public int? Max { get; init; }
 
-	public string Message { get; init; }
+	public string? Message { get; init; }
 
-	public string Format { get; init; }
+	public string? Format { get; init; }
 
-	public string DefaultValue { get; init; }
+	public string? DefaultValue { get; init; }
 
-	public string Instructions { get; init; }
+	public string? Instructions { get; init; }
 
 	public ReadConfig(int max)
 	{

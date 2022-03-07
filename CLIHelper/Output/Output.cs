@@ -11,4 +11,7 @@ public class Output : IOutput
 
 	public void Clear() =>
 		Console.Clear();
+
+    public void Log(string? text) =>
+		Console.WriteLine($"--> {text}");
 }

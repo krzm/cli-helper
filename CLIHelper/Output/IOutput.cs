@@ -8,4 +8,6 @@ public interface IOutput
 	void Write(string? text);
 
 	void Clear();
+
+	void Log(string? text);
 }

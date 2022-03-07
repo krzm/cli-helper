@@ -24,6 +24,7 @@ public class CancelableReadLine : ICancelableReadLine
 	private void InitializeLoop(ReadConfig config)
 	{
 		readConfig = config;
+		ArgumentNullException.ThrowIfNull(readConfig);
 		clOffset = Console.CursorLeft;
 		buffer.Clear();
 		if (string.IsNullOrWhiteSpace(config.DefaultValue) == false)
@@ -38,6 +39,7 @@ public class CancelableReadLine : ICancelableReadLine
 
 	private void LoopOnKeys()
 	{
+		ArgumentNullException.ThrowIfNull(readConfig);
 		while (key.Key != ConsoleKey.Enter && key.Key != ConsoleKey.Escape)
 		{
 			if (key.Key == ConsoleKey.Backspace && Console.CursorLeft - clOffset > 0)
@@ -50,7 +52,10 @@ public class CancelableReadLine : ICancelableReadLine
 				OnDelete();
 				key = Console.ReadKey(true);
 			}
-			else if ((char.IsLetterOrDigit(key.KeyChar) || char.IsWhiteSpace(key.KeyChar) || char.IsPunctuation(key.KeyChar)) && buffer.Length < readConfig.Max)
+			else if ((char.IsLetterOrDigit(key.KeyChar) 
+				|| char.IsWhiteSpace(key.KeyChar) 
+				|| char.IsPunctuation(key.KeyChar)) 
+				&& buffer.Length < readConfig.Max)
 			{
 				OnChars(key.KeyChar);
 				key = Console.ReadKey(true);
