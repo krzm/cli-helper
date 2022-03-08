@@ -1,7 +1,8 @@
 ﻿namespace CLIHelper;
 
 #nullable enable
-public class Output : IOutput
+public class ConsoleOut 
+	: IOutput
 {
 	public void WriteLine(string? text) =>
 		Console.WriteLine(text);
