@@ -1,7 +1,6 @@
 namespace CLIHelper;
 
-public interface IMockOut 
-	: IOutput
+public interface IOutMock
 {
 	string OutText { get; }
 
