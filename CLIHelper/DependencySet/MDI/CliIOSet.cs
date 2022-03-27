@@ -3,10 +3,10 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CLIHelper.MDI;
 
-public class AppOutput 
+public class CliIOSet 
 	: MDIDependencySet
 {
-	public AppOutput(
+	public CliIOSet(
 		IServiceCollection container)
 		: base(container)
 	{
@@ -15,6 +15,7 @@ public class AppOutput
 	public override void Register()
 	{
 		Container
+			.AddSingleton<IInput, Input>()
 			.AddSingleton<IOutput, ConsoleOut>();
 	}
 }

@@ -3,10 +3,10 @@ using Unity;
 
 namespace CLIHelper.Unity;
 
-public class AppOutput 
+public class CliIOSet 
     : UnityDependencySet
 {
-    public AppOutput(
+    public CliIOSet(
         IUnityContainer container)
         : base(container)
     {
@@ -15,6 +15,7 @@ public class AppOutput
     public override void Register()
     {
         Container
+            .RegisterSingleton<IInput, Input>()
             .RegisterSingleton<IOutput, ConsoleOut>();
     }
 }
