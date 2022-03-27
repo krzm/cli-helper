@@ -14,12 +14,7 @@ public class AppOutput
 
     public override void Register()
     {
-        Container.RegisterSingleton<IOutput, ConsoleOut>();
-        RegisterColumnCalculators();
-        RegisterTableProviders();
+        Container
+            .RegisterSingleton<IOutput, ConsoleOut>();
     }
-
-    protected virtual void RegisterColumnCalculators() { }
-
-    protected virtual void RegisterTableProviders() { }
 }
