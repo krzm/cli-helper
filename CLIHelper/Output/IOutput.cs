@@ -1,6 +1,5 @@
 ﻿namespace CLIHelper;
 
-#nullable enable
 public interface IOutput
 {
 	void WriteLine(string? text);
